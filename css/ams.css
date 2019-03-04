@@ -1,0 +1,22 @@
+.content1{
+float: left;
+width: 250px;
+border: 1px solid;
+height: 670px;
+background-color: #333333;
+padding-left: 10px;
+padding-top: 100px;
+
+}
+
+.content2{
+	padding-left: 250px;	
+	width: auto;
+	height:670px;
+	
+	background-color: white;
+}
+
+.main{
+	float: center;
+}

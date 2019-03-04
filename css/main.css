@@ -1,0 +1,181 @@
+
+
+*{margin: 0;}
+
+
+
+.login{
+	width: 300px;
+	margin: 20px auto;
+	
+}
+
+
+.admin_login{
+	width: 300px;
+	margin: 20px auto;
+	padding-top: 150px;
+	
+}
+
+.order{
+	width: 500px;
+	margin: 20px auto;
+}
+
+
+p{
+	margin-bottom: 15px;
+}
+
+p.error{
+
+	background: red;
+	color: white;
+	padding: 10px;
+}
+
+p.logout{
+	background: green;
+	color: white;
+	padding: 10px;
+}
+
+input{
+	display: block;
+	width: 100%;
+	padding: 5px;
+	box-sizing: border-box;
+}
+button{
+	width: 100%;
+	display: block;
+	box-sizing: border-box;
+	padding: 5px;
+	
+}
+
+header {
+	background: #222;
+	overflow: auto;
+	padding: 1px;
+}
+
+div.errmsg{
+	color: red;
+}
+
+header .appname{
+	float: left;
+	font-size: 30px;
+
+}
+
+header .loggedin{
+	float: right;
+	font-size: 15px;
+	padding-right: 20px;
+
+}
+
+main{
+
+
+	width: 1000px;
+	margin: 30px  auto;
+}
+
+
+
+}
+main h1{
+	margin-bottom: 20px;
+	font-size: 50px;
+
+}
+
+main h1 span{
+
+	font-size: 20px;
+}
+
+table.masterlist{
+
+	width: 100%;
+	border-collapse: collapse;
+
+}
+
+table.masterlist th {
+	background: #eee;
+	text-align: left;
+}
+
+table.masterlist th,table.masterlist td {
+	padding: 10px;
+	border-bottom: 1px solid #aaa;
+}
+
+form.userform label {
+	width: 30%;
+	float: left;
+}
+
+form.userform input{
+	width: 60%;
+}
+
+form.userform button{
+
+	width: 200px;
+	float: left;
+}
+
+
+.errmsg{
+	margin:20px;
+}
+
+
+img{
+  max-width:180px;
+}
+input[type=file]{
+padding:10px;
+background:#2d2d2d;}
+
+.form-control{
+	width: 50%;
+	text-align: right;
+	
+}
+
+body.cart{
+	background-color: #eee;
+}
+
+mark { 
+  background-color: yellow;
+  color: black;
+}
+
+@import url(http://fonts.googleapis.com/css?family=Bitter:400,700);
+
+
+
+h6 {
+	margin: 10px auto;
+	text-align: center;
+	text-shadow: -2px -1px 0px rgba(255,255,220,0.9), 1px 1px 0px rgba(0,0,0,0.8);
+	color: #333;
+	opacity: 0.9;
+	font: 700 50px 'Bitter';
+}
+
+.a { 
+ 		float: center;
+ 		width: 40%;
+ 		text-align: center;
+
+
+}
