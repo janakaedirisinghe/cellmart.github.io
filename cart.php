@@ -146,8 +146,8 @@ $category = "1";
 
 
 </header>
-<a href="cart.php?category=1">Samsung</a>|
-<a href="cart.php?category=2">Apple</a>
+| <a href="cart.php?category=1">Samsung</a> | 
+<a href="cart.php?category=2">Apple</a> | 
 <div class="well well-lg">
 		
 </div>
