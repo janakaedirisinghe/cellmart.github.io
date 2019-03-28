@@ -101,7 +101,7 @@
 
 </header>
 <main>
-	<h1>View / Modify User<span><a href="cart.php"> < User List</a></span></h1>
+	<h1>View / Modify User<span><a href="cart.php"> < HOME</a></span></h1>
 
 	<?php 
 	

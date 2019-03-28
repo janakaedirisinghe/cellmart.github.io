@@ -20,7 +20,7 @@ $connect= mysqli_connect('localhost','root','','testing');
  <body>
  	<span class="d-block p-3 bg-dark text-white">
  		<a href="cart.php" style="text-decoration: none; color: white"><h2>Cell Mart</h2></a>
- 		<a href="#" style="float: right; margin-top: -50px;">Logout</a>
+ 		<a href="logout.php" style="float: right; margin-top: -50px;">Logout</a>
 
  	</span>
  
@@ -38,7 +38,7 @@ $connect= mysqli_connect('localhost','root','','testing');
  
 
 			<br>
-			<div class="jumbotron jumbotron-fluid" ">
+			<div class="jumbotron jumbotron-fluid"  >
 				<div class="container">
 					<p class="lead" style="font-size: 16px; font-family: 'Courier'">	
 						Date/Time : <?php echo $row["date_time"]; ?><br>
@@ -66,7 +66,7 @@ $connect= mysqli_connect('localhost','root','','testing');
 							$attr = 'red';
 						}
 						?>
-						Status : <mark style="background-color: <?php echo $attr; ?> ; border-radius: 7px"><?php echo $row['status']; ?></mark>
+						&nbsp&nbsp&nbsp		&nbsp 	<b>Status :</b> <mark style="background-color: <?php echo $attr; ?> ; border-radius: 7px ;"><?php echo $row['status']; ?></mark>
 						
 							</p>
 					</div>
@@ -86,3 +86,5 @@ $connect= mysqli_connect('localhost','root','','testing');
 
  </body>
  </html>
+
+ 

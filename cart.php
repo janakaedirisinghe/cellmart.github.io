@@ -79,7 +79,17 @@ if(isset($_GET["action"]))
 
 
 
+
+
 ?>
+
+<?php 
+$category = "1";
+	if (isset($_GET['category'])) {
+		$category = $_GET['category'];
+	}
+
+ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -97,13 +107,23 @@ if(isset($_GET["action"]))
 		<header>
 	
 	<div class="appname"><H6>  &nbsp &nbsp  Cell Mart</H6></div>
-	<div class="loggedin"><mark><b>Hi <?php echo $_SESSION['first_name'];?>!</b></mark><a href="user-modify.php?user_id=<?php echo $user_id; ?>" style="padding-left: 30px;">&nbspMy Account&nbsp</a><a href="logout.php" style="padding-left: 20px;"> Log Out </a><a href="my-orders.php?my_orders=yes" style="padding-left: 20px;">My orders</a></div>
+	<div class="loggedin">
+		<mark><b>Hi <?php echo $_SESSION['first_name'];?> > </b></mark>
+
+		<a href="user-modify.php?user_id=<?php echo $user_id; ?>" style="padding-left: 30px;text-decoration: none;color: white"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp&nbspMy Account&nbsp</a>
+		
+		<a href="my-orders.php?my_orders=yes" style="padding-left: 20px;text-decoration: none;color: white"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>&nbsp&nbspMy orders</a>
+
+		<a href="logout.php" style="padding-left: 20px;text-decoration: none;color: white"> <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>&nbsp&nbspLog Out </a>
+	</div>
+
 
 
 	<br>
 	<br>
-	<div class="loggedin"><a href="buy-item.php?action="><button type="button" class="btn btn-primary">
-  Goto My Cart <span class="badge badge-light"><?php 
+	<div class="loggedin"><a href="buy-item.php?action="><button type="button" class="btn btn-warning">
+  Goto My Cart <span class="badge badge-light">
+  	<?php 
 
   if (!isset($_SESSION['shopping_cart'])) {
   	echo "0";
@@ -112,10 +132,13 @@ if(isset($_GET["action"]))
   }
 
 
-  ?></span>
+  ?>
+  	
+  </span>
 </button></a>
 
 </div>
+
 
 
 
@@ -123,17 +146,16 @@ if(isset($_GET["action"]))
 
 
 </header>
-
-
-
+<a href="cart.php?category=1">Samsung</a>|
+<a href="cart.php?category=2">Apple</a>
+<div class="well well-lg">
+		
+</div>
 		<div class="container">
-			<br />
-			<br />
-			<br />
-			<br />
-			<br /><br />
+			
+		
 			<?php
-				$query = "SELECT * FROM tbl_product ORDER BY id ASC";
+				$query = "SELECT * FROM tbl_product WHERE category=$category ORDER BY id ASC";
 				$result = mysqli_query($connect, $query);
 				if(mysqli_num_rows($result) > 0)
 				{

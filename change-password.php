@@ -90,7 +90,7 @@
 
 </header>
 <main>
-	<h1>Change Password<span><a href="cart.php"> < User List</a></span></h1>
+	<h1>Change Password<span><a href="cart.php"> < Home</a></span></h1>
 
 	<?php 
 	

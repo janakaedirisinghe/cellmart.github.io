@@ -11,8 +11,8 @@ $connect = mysqli_connect("localhost", "root", "", "testing");
 		if (isset($_GET['action'])) {
 			if ($_GET['action']=='add') {
 				
-					$query = "INSERT INTO tbl_product(name,image,price)
-					VALUES('{$_POST['item_name']}','{$_POST['item_image']}','{$_POST['item_price']}')";
+					$query = "INSERT INTO tbl_product(name,image,price,category)
+					VALUES('{$_POST['item_name']}','{$_POST['item_image']}','{$_POST['item_price']}','{$_POST['category']}')";
 					$result= mysqli_query($connect,$query);
 					if ($result) {
 						echo '<script>alert("Item add succsessful")</script>';
@@ -79,9 +79,9 @@ $connect = mysqli_connect("localhost", "root", "", "testing");
 		<form action="item-add.php?action=add" method="POST" style="padding-left: 330px;">
 			
 			<fieldset>
-				<legend><h1> Item Add</h1></legend>
+				<legend><h1>Item Add</h1></legend>
 				<br>
-				<h5><a href="admin-activity.php?items=yes">Admin page</a></h5>
+				<!--<h5><a href="admin-activity.php?items=yes">Admin page</a></h5>-->
 
 				
 
@@ -95,12 +95,20 @@ $connect = mysqli_connect("localhost", "root", "", "testing");
 				
 
 				<p>
-					<b>Item Name :</b>	<input type="text" name='item_name' id="" placeholder="watch" required style="width: 250px;">
+					<b>Item Name :</b>	<input type="text" name='item_name' id="" placeholder="Samsung" required style="width: 250px;">
 					
 				</p>
 				<p>
-					<b>Item Price :</b>	<input type="text" name='item_price' id="" placeholder="199" required style="width: 250px;">
+					<b>Item Price :</b>	<input type="text" name='item_price' id="" placeholder="Rs : 25,000.00" required style="width: 250px;">
 
+				</p>	
+				<p>
+						<label for="">Item Category:</label>
+							<select name="category" size="1">
+				   			 	<option value="1">Samsung</option>
+				    			<option value="2">Apple</option>
+				   				
+				 			 </select>
 				</p>	
 				
 				<p>

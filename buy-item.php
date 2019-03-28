@@ -40,8 +40,8 @@ if(isset($_GET["action"]))
 			$phone_number = $_POST['phone_number'];
 			$payment_method = $_POST['payment_method'];
 	
-			$query ="INSERT INTO orders(id,email,full_name,address,phone_number,payment_method,items) 
-					VALUES ('{$user_id}','{$email}','{$first_name}','{$address}','{$phone_number}','{$payment_method}','{$serialize_array}')"; 
+			$query ="INSERT INTO orders(id,email,full_name,address,phone_number,payment_method,items,date_time) 
+					VALUES ('{$user_id}','{$email}','{$first_name}','{$address}','{$phone_number}','{$payment_method}','{$serialize_array}',NOW())"; 
 
 			$query_copy = "INSERT INTO orders_copy(id,email,full_name,address,phone_number,payment_method,items,date_time) 
 					VALUES ('{$user_id}','{$email}','{$first_name}','{$address}','{$phone_number}','{$payment_method}','{$serialize_array}',NOW())"; 
@@ -52,6 +52,7 @@ if(isset($_GET["action"]))
 
 			if ($result) {
 				echo '<script>alert("Thank You! Happy Shopping!")</script>';
+				unset($_SESSION['shopping_cart']);
 				echo '<script>window.location="cart.php"</script>';
 			}else
 				{
@@ -104,7 +105,7 @@ if(isset($_GET["action"]))
 <body>
 	<header>
 	<div class="appname"><h6>Cell Mart</h6></div>
-	<div class="loggedin"><mark>Welcome <?php echo $_SESSION['first_name'];?> </mark>&nbsp <a href="logout.php"> Log Out</a></div>
+	<div class="loggedin"><mark>Welcome <?php echo $_SESSION['first_name'];?> </mark>&nbsp <a href="logout.php" style="text-decoration: none;color: white"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Log Out</a></div>
 	</header>
 	<h3><a href="cart.php"> << Back to cart </a></h3>
 

@@ -78,8 +78,8 @@
 	<title>User</title>
 	<link rel="stylesheet" type="text/css" href='css/main.css'>
 </head>
-<body>
 
+<body background="admin/img/1.jpg">
 <header>
 	
 	
@@ -103,22 +103,22 @@
 		
 		<p>
 			<label for="">First Name:</label>
-			<input type="text" name="first_name" <?php echo 'value="' . $first_name .'"'; ?>  >	
+			<input type="text" name="first_name"   >	
 		</p>
 		<p>
 			<label for="">Last Name:</label>
-			<input type="text" name="last_name" <?php echo 'value="' . $last_name.'"'; ?> >	
+			<input type="text" name="last_name"  >	
 		</p>
 		<p> 
 			<label for="">Email Address:</label>
-			<input type="email" name="email" <?php echo 'value="' . $email .'"'; ?> >
+			<input type="email" name="email"  >
 		</p>
 		<p>
 			<label for="">Password:</label>
 			<input type="password" name="password" >
 		</p>
 		<p>
-			<button type="submit" name="submit">Save</button>
+			<button type="submit" name="submit">Register</button>
 		</p>
 	</form>
 </fieldset>
@@ -127,12 +127,8 @@
 </main>
 
 <br>
-<hr>
-<pre>
-	<?php
-	echo 'errors ';
-		print_r($errors);
-	 ?>
+
+	
 
 </pre>
 

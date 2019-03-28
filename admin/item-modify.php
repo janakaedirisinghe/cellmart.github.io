@@ -29,6 +29,19 @@ $connect = mysqli_connect("localhost", "root", "", "testing");
 					$item_name=$result['name'];
 					$item_price=$result['price'];
 					$item_image =$result['image'];
+					$category=$result['category'];
+
+					switch ($category) {
+						case '1':
+							$category_name  = "Samsung";
+							break;
+						case '2':
+							$category_name = 'apple';
+							break;
+						default:
+							$category_name = 'null';
+							break;
+					}
 
 
 
@@ -115,6 +128,11 @@ $connect = mysqli_connect("localhost", "root", "", "testing");
 				<p>
 					<b>Item Price :</b>	<input type="text" name='item_price' id="" <?php echo 'value="' . $item_price.'"'; ?> required>
 
+				</p>
+				<p>
+						<label for="">Item Category:</label>
+						<?php echo $category_name; ?>
+							
 				</p>	
 				<p>
 					<b>Item Image :</b>	<input type='file' name="item_image" onchange="readURL(this);" />

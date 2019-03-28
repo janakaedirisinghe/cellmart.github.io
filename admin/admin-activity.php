@@ -59,14 +59,14 @@ $connect = mysqli_connect("localhost", "root", "", "testing");
 
     		{	
     			
-				$query = "SELECT * FROM tbl_product ORDER BY id ASC";
+				$query = "SELECT * FROM tbl_product ORDER BY id DESC";
 				$result = mysqli_query($connect, $query);
 				if(mysqli_num_rows($result) > 0)
 				{
 					while($row = mysqli_fetch_array($result))
 					{
 				?>
-			<div class="col-md-2">
+			<div class="col-lg-3">
 				<form method="post" action="cart.php?action=add&id=<?php echo $row["id"]; ?>">
 					<div style="border:1px solid #333; background-color:#f1f1f1; border-radius:5px; padding:16px;" align="center">
 						
@@ -74,7 +74,7 @@ $connect = mysqli_connect("localhost", "root", "", "testing");
 						<h5 class="text-info"><?php echo $row["name"]; ?></h5>
 
 						<h5 class="text-danger">Rs: <?php echo $row["price"]; ?></h5>
-						<img src="../images/<?php echo $row["image"]; ?>" class="img-responsive" /><br />
+						<img src="../images/<?php echo $row["image"]; ?>" class="img-responsive"><br>
 						<a href="item-modify.php?action=modify&id=<?php echo $row["id"]; ?>">Edit </a><a href="item-delete.php?action=delete&id=<?php echo $row["id"]; ?>">| Delete</a>
 
 						
@@ -95,7 +95,7 @@ $connect = mysqli_connect("localhost", "root", "", "testing");
    	<?php 
    			if (isset($_GET['order'])) {
    				
-   				$query=" SELECT * FROM orders ORDER BY id ASC ";
+   				$query=" SELECT * FROM orders ORDER BY date_time ASC ";
    				$result = mysqli_query($connect,$query);
    				if (mysqli_num_rows($result) > 0) {
    					while ($row = mysqli_fetch_array($result)) 
@@ -106,7 +106,8 @@ $connect = mysqli_connect("localhost", "root", "", "testing");
 
 			<br>
 			<div class="jumbotron" style="padding-left: 50px;">
-					
+						
+						Date/Time : <?php echo $row['date_time']; ?> <br>
 						User ID : <?php echo $row["id"]; ?> <br>
 						Name : <?php echo $row["full_name"]; ?> <br>					
 						Email : <?php echo $row["email"]; ?><br>		
@@ -124,9 +125,9 @@ $connect = mysqli_connect("localhost", "root", "", "testing");
 								}
 								?>
 
+
 								<br><br>
-						<a href="item-sent.php?action=sent&id=<?php echo $row["id"]; ?>"> | item Sent |</a>
-							
+						<a href="<?php echo 'item-sent.php?action=sent&id='.$row['id'].'&date_time='.$row['date_time'];?>"><span class="badge">Item Sent</span></a>
 					
 				
 			</div>
@@ -157,7 +158,7 @@ $connect = mysqli_connect("localhost", "root", "", "testing");
  
 
 			<br>
-			<div style="background-color:black;color:white;padding:20px; ">
+			<div style="background-color:#eee;color:black;padding:20px; ">
 					
 						User ID : <?php echo $row["id"]; ?> <br>
 						Name : <?php echo $row["full_name"]; ?> <br>					
@@ -176,9 +177,9 @@ $connect = mysqli_connect("localhost", "root", "", "testing");
 								}
 								?>
 
-								<br>
-						<a href="item-sent.php?action=sent&id=<?php echo $row["id"]; ?>"> | Delete from histry |</a>
-							
+								<br><br>
+						
+						<a href="item-sent.php?action=sent&id=<?php echo $row["id"]; ?>"><span class="badge">Delete from histry</span></a>	
 					
 				
 			</div>
