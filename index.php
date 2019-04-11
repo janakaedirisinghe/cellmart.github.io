@@ -17,7 +17,7 @@
 		}
 
 		if(!isset($_POST['password']) || strlen(trim($_POST['password'])) <1 ){
-			$errors[]='password is missing or invalid';
+			$errors[]='password is missing or invalid!';
 
 		}
 
@@ -109,7 +109,7 @@
 
 				 <?php 
 				 		if (isset($_GET['logout'])) {
-				 			echo '<p class="logout">Successfuly Logged Out</p>';
+				 			echo '<p class="logout">Successfuly Logged Out!</p>';
 				 		}
 				  ?>
 					
