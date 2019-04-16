@@ -31,7 +31,7 @@
 			$hashed_password = sha1($password);
 
 	
-		//prepare databse query
+		//prepare databse query //
 			$query = "SELECT * FROM user 
 						WHERE email='{$email}'
 						AND password='{$hashed_password}'
